@@ -1,9 +1,6 @@
 package GabrielaCastillo_20240153.GabrielaCastillo_20240153.Entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +14,8 @@ public class ProveedoresEntity {
 
     //LLAVE PRIMARIA COLUMNA  providerID
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_provider")
+    @SequenceGenerator(name = "seq_provider", sequenceName = "seq_provider", allocationSize = 1)
     @Column(name = "PROVIDERID")
     private Long id;
 
