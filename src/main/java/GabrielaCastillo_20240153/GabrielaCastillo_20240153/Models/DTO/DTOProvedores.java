@@ -11,13 +11,17 @@ import org.hibernate.validator.constraints.UniqueElements;
 @Getter @Setter
 @EqualsAndHashCode @ToString
 public class DTOProvedores {
+//En el dto hacemos la validaciones de cada uno de los atributos
+    //El notblank se ocupa en atributo de tipo string para verificar que no esten vacios
+    // SIZE sirve para los atributos string y definen la logitud de la cadea de texto
+    //EMAIL verifica que el formato del correo sea valdo
+    //Not null se ocupa cuando un atributo es de tipo number y verifica que este no se encuentre vacio
 
-    @NotNull(message = "El id no puede ser nulo o estar vacio")
     private Long id;
+
 
     @NotBlank(message ="El nombre del proveedor no puede estar vacio")
     @Size(max = 50, message = "Solo permite 50 caracteres")
-    @UniqueElements
     private String nombreProvedor;
 
     @NotBlank(message ="El telefono del proveedor no puede estar vacio")
